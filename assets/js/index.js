@@ -22,8 +22,6 @@ function displayTableProducts(products) {
     tbody.innerHTML = result;
 }
 
-
-
 async function generateProducts(display) {
     const data = await getData('https://dummyjson.com/products')
     display(data.products)

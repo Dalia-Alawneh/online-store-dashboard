@@ -76,6 +76,6 @@ async function updateProduct(id) {
         return await response.json();
     } catch (error) {
         console.error(error);
-        showModal()
+        showModal("An Error Occured", "../assets/img/warning.png", 'danger')
     }
 }

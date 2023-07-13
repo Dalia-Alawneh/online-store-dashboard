@@ -14,10 +14,9 @@ function displayCustomers(customers){
             <td>${customer.age}</td>
             <td>${customer.address.address}</td>
             <td><a href= "pages/edit-customer.html?id=${customer.id}"><img src="/assets/img/edit.png"  width="20"/></a></td>
-            <td><button onclick = deleteConfirmModal(${customer.id})><img src="/assets/img/trash.png"  width="22"/></button></td>
+            <td><button onclick = deleteUserConfirmModal(${customer.id})><img src="/assets/img/trash.png"  width="22"/></button></td>
         </tr>`;
     });
-    
     tbody.innerHTML = result;
 }
 

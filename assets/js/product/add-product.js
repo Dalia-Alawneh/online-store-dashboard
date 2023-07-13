@@ -24,7 +24,7 @@ async function addProduct() {
         
     } catch (error) {
         console.error(error);
-        showModal("An Error Occured", "assets/img/warning.png", 'danger')
+        showModal("An Error Occured", "../assets/img/warning.png", 'danger')
     }
 }
 addForm.addEventListener('submit',async (e)=>{
