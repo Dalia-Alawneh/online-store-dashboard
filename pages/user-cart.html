@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,8 +18,7 @@
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <input class="form-control form-control-dark w-100" type="text" id="search" placeholder="Search"
-            aria-label="Search">
+        <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
         <div class="navbar-nav">
             <div class="nav-item text-nowrap">
                 <a class="nav-link px-3" href="#">Sign out</a>
@@ -44,9 +44,7 @@
 
                         <li class="nav-item">
                             <a class="nav-link" href="../index.html">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <rect x="4" y="4" width="16" height="16" rx="2" ry="2" />
                                     <line x1="4" y1="12" x2="20" y2="12" />
                                     <line x1="4" y1="6" x2="20" y2="6" />
@@ -204,43 +202,21 @@
                         </button>
                     </div>
                 </div>
-                <h2>All Customers</h2>
+                <h2><span id="user-first-name"></span> Cart</h2>
 
-                <div class="table-responsive">
-                    <table class="table table-striped-columns table-sm ">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">First Name</th>
-                                <th scope="col">Last Name</th>
-                                <th scope="col">Image</th>
-                                <th scope="col">Gender</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Age</th>
-                                <th scope="col">Address</th>
-                                <th>Cart</th>
-                                <th>Delete</th>
-                            </tr>
-                        </thead>
-                        <tbody id="users">
-                        </tbody>
-                    </table>
+                <div class="cart">
+
                 </div>
-
-                
+            </main>
         </div>
-
-        </main>
-    </div>
     </div>
 
     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/modals.js"></script>
-    <script src="../assets//js/getData.js"></script>
-    <script src="../assets/js//customers/getCustomers.js"></script>
-    <script src="../assets/js/search.js"></script>
-    <script src="../assets/js/customers/search-customers.js"></script>
-    <script src="../assets/js/customers/delete-customer.js"></script>
+    <script src="../assets/js/getId.js"></script>
+    <script src="../assets/js/getData.js"></script>
+    <script src="../assets/js/cart/display-carts.js"></script>
+    <script src="../assets/js/cart/getCart.js"></script>
 
 </body>
 

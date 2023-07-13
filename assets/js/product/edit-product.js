@@ -3,11 +3,6 @@ const [title, , price, rating, stock, brand] = editForm.elements;
 
 let product = {}
 
-function getId() {
-    const queryString = window.location.search;
-    const params = new URLSearchParams(queryString)
-    return params.get('id');
-}
 
 
 async function getProduct(id) {

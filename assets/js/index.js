@@ -15,10 +15,8 @@ function displayTableProducts(products) {
             <td>${product.category}</td>
             <td><a href= "pages/edit-product.html?id=${product.id}"><img src="/assets/img/edit.png"  width="20"/></a></td>
             <td><button onclick = deleteConfirmModal(${product.id})><img src="/assets/img/trash.png"  width="22"/></button></td>
-        </tr>
-    `;
+        </tr>`;
     });
-
     tbody.innerHTML = result;
 }
 
