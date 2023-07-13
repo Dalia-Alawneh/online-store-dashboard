@@ -1,8 +1,6 @@
 const editForm = document.getElementById("edit-form")
 const [title, , price, rating, stock, brand] = editForm.elements;
 
-let product = {}
-
 
 
 async function getProduct(id) {
@@ -33,7 +31,7 @@ async function displayForm(product) {
 
 async function generateOldProduct() {
     const id = getId()
-    product = await getProduct(id)
+    const product = await getProduct(id)
     document.getElementById('product-title').textContent = product.title
     displayForm(product)
 }

@@ -1,12 +1,19 @@
+async function getUserName(id){
+    const user =await getData(`https://dummyjson.com/users/${id}`)
+    console.log(user.firstname);
+}
 
-
-function displayCarts(carts){
+function displayCarts(carts,userName){
     let result =``
     carts.forEach((cart,index) => {
         result += `
-        <div class="card p-2">
-            <div class="card-header">
-                Cart #${index+1}
+        <div class="card p-2 my-4">
+            <div class="card-header d-flex justify-content-between align-items-center">
+            <p class="mb-0">Cart #${index+1}</p>
+            <a href="#" class="mb-0 text-decoration-none">User ID: ${
+                cart.userId
+                // getUserName()
+            }</a>
             </div>
             <div class="card-body">
             <div class="total-discount">Total Discount:<span class="fw-bold"> $${cart.discountedTotal}</span> </div>
@@ -18,10 +25,10 @@ function displayCarts(carts){
                         <tr>
                             <th>Title</th>
                             <th>Price</th>
-                            <th>Discount Percentage</th>
-                            <th>Discount Price</th>
                             <th>Quantity</th>
+                            <th>Discount Percentage</th>
                             <th>Total</th>
+                            <th>Discounted Price</th>
                         </tr>
                     </thead>
                     <tbody id="cart-data">
@@ -31,10 +38,10 @@ function displayCarts(carts){
                             <tr>
                                 <td>${product.title}</td>
                                 <td class="text-danger">${product.price}</td>
-                                <td>% ${product.discountPercentage}</td>
-                                <td class="text-info ">${product.discountedPrice}</td>
                                 <td>${product.quantity}</td>
-                                <td class="text-success fw-bold">${product.total}</td>
+                                <td>% ${product.discountPercentage}</td>
+                                <td class="text-info">${product.total}</td>
+                                <td class="text-success fw-bold ">${product.discountedPrice}</td>
                             </tr>
                             `
                         }).join('')

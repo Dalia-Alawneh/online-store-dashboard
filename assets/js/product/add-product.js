@@ -29,11 +29,11 @@ async function addProduct() {
 }
 addForm.addEventListener('submit',async (e)=>{
     e.preventDefault()
-    let res = await addProduct()
+    const res = await addProduct()
     if(res){
         showModal("Product Added Successfully", "../assets/img/check.png", "success")
-        setTimeout(()=>{},10000)
-        window.location = "../index.html"
+        // setTimeout(()=>{},10000)
+        // window.location = "../index.html"
     }
     console.log(res);
 })

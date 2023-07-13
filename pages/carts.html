@@ -203,52 +203,36 @@
                         </button>
                     </div>
                 </div>
-                <h2>Add New Product</h2>
+                <h2>All Carts</h2>
 
-                <div class="edit add">
-                    <form action="" id="add-form">
-                        <div class="mb-3">
-                            <label for="title" class="form-label">Product Title</label>
-                            <input type="text" class="form-control" id="title" aria-describedby="title">
-                        </div>
-                        <div class="mb-3">
-                            <div class="row" id="images">
+                <div class="cart">
+                    <table class="table table-responsive mt-4">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Price</th>
+                                <th>Discount Percentage</th>
+                                <th>Discount Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart-data">
 
-                            </div>
-                            <label for="image" class="form-label">Image</label>
-                            <input type="file" class="form-control" multiple="multiple" id="image">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="price" class="form-label">Price</label>
-                            <input type="number" class="form-control" id="price">
-                        </div>
-                        <div class="mb-3">
-                            <label for="rating" class="form-label">Rating</label>
-                            <input type="text" class="form-control" id="rating">
-                        </div>
-                        <div class="mb-3">
-                            <label for="stock" class="form-label">Stock</label>
-                            <input type="number" class="form-control" id="stock">
-                        </div>
-                        <div class="mb-3">
-                            <label for="brand" class="form-label">Brand</label>
-                            <input type="text" class="form-control" id="brand">
-                        </div>
-                        <div class="d-flex justify-content-center gap-5">
-                            <button type="submit" class="btn btn-success">Add</button>
-                            <a href="../index.html" class="btn btn-primary">Cancel</a>
-                        </div>
-                    </form>
+                        </tbody>
+                    </table>
                 </div>
-
             </main>
         </div>
     </div>
 
     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/modals.js"></script>
-    <script src="../assets/js/product/add-product.js"></script>
+    <script src="../assets/js/getId.js"></script>
+    <script src="../assets/js/getData.js"></script>
+    <script src="../assets/js/cart/display-carts.js"></script>
+    <script src="../assets/js/cart/get-all-carts.js"></script>
+
 </body>
 
 </html>
