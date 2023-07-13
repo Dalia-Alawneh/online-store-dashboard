@@ -18,19 +18,19 @@ async function addProduct() {
                 'Content-Type': 'application/json',
                 accept: "application/json"
             },
-            body: JSON.stringify({product})
+            body: JSON.stringify({ product })
         })
         return await response.json();
-        
+
     } catch (error) {
         console.error(error);
         showModal("An Error Occured", "../assets/img/warning.png", 'danger')
     }
 }
-addForm.addEventListener('submit',async (e)=>{
+addForm.addEventListener('submit', async (e) => {
     e.preventDefault()
     const res = await addProduct()
-    if(res){
+    if (res) {
         showModal("Product Added Successfully", "../assets/img/check.png", "success")
         // setTimeout(()=>{},10000)
         // window.location = "../index.html"

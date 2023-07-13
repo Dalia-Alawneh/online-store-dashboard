@@ -9,7 +9,7 @@ async function getProduct(id) {
         return await response.json();
     } catch (error) {
         console.error(error);
-        showModal("An Error Occured","../assets/img/warning.png", 'danger')
+        showModal("An Error Occured", "../assets/img/warning.png", 'danger')
     }
 }
 
@@ -38,11 +38,11 @@ async function generateOldProduct() {
 
 generateOldProduct()
 
-editForm.addEventListener('submit', async(e)=>{
+editForm.addEventListener('submit', async (e) => {
     e.preventDefault()
     const id = getId()
     const response = await updateProduct(id)
-    if(response){
+    if (response) {
         showModal("Product Updated Successfully", "../assets/img/check.png", "success")
     }
 
@@ -64,7 +64,7 @@ async function updateProduct(id) {
                 'Content-Type': 'application/json',
                 accept: "application/json"
             },
-            body: JSON.stringify({product})
+            body: JSON.stringify({ product })
         });
         return await response.json();
     } catch (error) {

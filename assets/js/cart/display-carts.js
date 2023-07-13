@@ -1,18 +1,17 @@
-async function getUserName(id){
-    const user =await getData(`https://dummyjson.com/users/${id}`)
+async function getUserName(id) {
+    const user = await getData(`https://dummyjson.com/users/${id}`)
     console.log(user.firstname);
 }
 
-function displayCarts(carts,userName){
-    let result =``
-    carts.forEach((cart,index) => {
+function displayCarts(carts, userName) {
+    let result = ``
+    carts.forEach((cart, index) => {
         result += `
         <div class="card p-2 my-4">
             <div class="card-header d-flex justify-content-between align-items-center">
-            <p class="mb-0">Cart #${index+1}</p>
-            <a href="#" class="mb-0 text-decoration-none">User ID: ${
-                cart.userId
-                // getUserName()
+            <p class="mb-0">Cart #${index + 1}</p>
+            <a href="#" class="mb-0 text-decoration-none">User ID: ${cart.userId
+            // getUserName()
             }</a>
             </div>
             <div class="card-body">
@@ -32,9 +31,8 @@ function displayCarts(carts,userName){
                         </tr>
                     </thead>
                     <tbody id="cart-data">
-                    ${
-                        cart.products.map((product)=>{
-                            return `
+                    ${cart.products.map((product) => {
+                return `
                             <tr>
                                 <td>${product.title}</td>
                                 <td class="text-danger">${product.price}</td>
@@ -44,8 +42,8 @@ function displayCarts(carts,userName){
                                 <td class="text-success fw-bold ">${product.discountedPrice}</td>
                             </tr>
                             `
-                        }).join('')
-                    }
+            }).join('')
+            }
                     </tbody>
                 </table>
             </div>

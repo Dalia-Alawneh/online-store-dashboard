@@ -1,4 +1,4 @@
-function displayCustomers(customers){
+function displayCustomers(customers) {
     console.log(customers);
     const tbody = document.getElementById('users');
     let result = '';
@@ -20,7 +20,7 @@ function displayCustomers(customers){
     tbody.innerHTML = result;
 }
 
-async function generateCustomers(){
+async function generateCustomers() {
     const customers = await getData("https://dummyjson.com/users")
     console.log(customers.users);
     displayCustomers(customers.users)
