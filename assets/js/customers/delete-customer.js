@@ -1,5 +1,5 @@
-hideAlert('.alert')
 async function deleteUser(id) {
+    hideAlert('.alert')
     try {
         const response = await fetch(`https://dummyjson.com/users/${id}`, {
             method: 'DELETE',
@@ -13,3 +13,12 @@ async function deleteUser(id) {
         showModal("An Error Occured", "assets/img/warning.png", 'danger')
     }
 }
+
+
+async function generateCustomer() {
+    const id = getId()
+    const customer = await getData(`https://dummyjson.com/users/${id}`)
+    displayName(id)
+    displayCustomer(customer)
+}
+generateCustomer()
