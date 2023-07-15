@@ -17,14 +17,43 @@ function displayTableProducts(products) {
             <td><button onclick = deleteConfirmModal(${product.id})><img src="assets/img/trash.png"  width="22"/></button></td>
         </tr>`;
     });
+    if(result===''){
+        console.log('hhhhh');
+        result = `
+        <tr><td colspan=10>No more Products!</td></tr>
+        `
+    }
     tbody.innerHTML = result;
 }
 
-async function generateProducts(display) {
-    const data = await getData('https://dummyjson.com/products')
-    display(data.products)
+// async function generateProducts(display) {
+//     const data = await getData('https://dummyjson.com/products')
+//     display(data.products)
+// }
+
+// generateProducts(displayTableProducts)
+
+
+let currentPage = 1;
+const limit = 10;
+
+async function generateProducts(display, page) {
+    const skip = (page - 1) * limit;
+    const url = `https://dummyjson.com/products?limit=${limit}&skip=${skip}`;
+    const data = await getData(url);
+    display(data.products);
 }
 
-generateProducts(displayTableProducts)
+function nextPage(display) {
+    currentPage++;
+    generateProducts(display, currentPage);
+}
 
+function previousPage(display) {
+    if (currentPage > 1) {
+        currentPage--;
+        generateProducts(display, currentPage);
+    }
+}
 
+generateProducts(displayTableProducts, currentPage);

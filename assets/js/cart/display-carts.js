@@ -49,6 +49,13 @@ function displayCarts(carts, userName) {
             </div>
         </div>`
     });
+    console.log(typeof(result))
+    if(result===''){
+        console.log('hhhhh');
+        result = `
+        <div class="text-center d-flex justify-content-center mt-5">User have no cart yet!</div>
+        `
+    }
     document.querySelector('.cart').innerHTML = result
 }
 

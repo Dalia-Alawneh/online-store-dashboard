@@ -1,6 +1,6 @@
 function displayCustomer(customer) {
     const customerSection = document.getElementById('customer');
-    let result = `
+    const result = `
     <div class="row">
     <div class="col-md-6">
         <div class="card">
@@ -60,7 +60,12 @@ function displayCustomer(customer) {
     </div>
 </div>
     `;
-
+    if(result===''){
+        console.log('hhhhh');
+        result = `
+        <div class="text-center">No Data!</div>
+        `
+    }
     customerSection.innerHTML = result;
 }
 

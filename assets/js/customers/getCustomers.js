@@ -13,18 +13,39 @@ function displayCustomers(customers) {
             <td>${customer.email}</td>
             <td>${customer.age}</td>
             <td>${customer.address.address}</td>
-            <td><a href= "user-cart.html?id=${customer.id}"><img src="assets/img/trolley.png"  width="20"/></a></td>
-            <td><button onclick = deleteUserConfirmModal(${customer.id})><img src="assets/img/trash.png"  width="22"/></button></td>
+            <td><a href= "user-cart.html?id=${customer.id}"><img src="../assets/img/trolley.png"  width="20"/></a></td>
+            <td><button onclick = deleteUserConfirmModal(${customer.id})><img src="/assets/img/trash.png"  width="22"/></button></td>
         </tr>`;
     });
+    if(result===''){
+        console.log('hhhhh');
+        result = `
+        <tr><td colspan=10>No more Customers!</td></tr>
+        `
+    }
     tbody.innerHTML = result;
 }
 
-async function generateCustomers() {
-    const customers = await getData("https://dummyjson.com/users")
-    console.log(customers.users);
-    displayCustomers(customers.users)
+let currentPage = 1;
+const limit = 10;
+
+async function generateCustomers(display, page) {
+    const skip = (page - 1) * limit;
+    const url = `https://dummyjson.com/users?limit=${limit}&skip=${skip}`;
+    const data = await getData(url);
+    displayCustomers(data.users);
 }
-generateCustomers()
 
+function nextPage(display) {
+    currentPage++;
+    generateCustomers(display, currentPage);
+}
 
+function previousPage(display) {
+    if (currentPage > 1) {
+        currentPage--;
+        generateCustomers(display, currentPage);
+    }
+}
+
+generateCustomers(displayCustomers, currentPage);
