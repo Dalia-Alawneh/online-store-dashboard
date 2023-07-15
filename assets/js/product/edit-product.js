@@ -44,6 +44,7 @@ editForm.addEventListener('submit', async (e) => {
     const response = await updateProduct(id)
     if (response) {
         showModal("Product Updated Successfully", "../assets/img/check.png", "success")
+        editForm.reset()
     }
 
 })
