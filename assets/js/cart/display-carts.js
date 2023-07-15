@@ -10,7 +10,7 @@ function displayCarts(carts, userName) {
         <div class="card p-2 my-4">
             <div class="card-header d-flex justify-content-between align-items-center">
             <p class="mb-0">Cart #${index + 1}</p>
-            <a href="#" class="mb-0 text-decoration-none">User ID: ${cart.userId
+            <a href="user.html?id=${cart.userId}" class="mb-0 text-decoration-none">User ID: ${cart.userId
             // getUserName()
             }</a>
             </div>
