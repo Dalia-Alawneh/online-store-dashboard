@@ -67,15 +67,7 @@ function displayCustomer(customer) {
 async function generateCustomer() {
     const id = getId()
     const customer = await getData(`https://dummyjson.com/users/${id}`)
-    document.getElementById('user-first-name').textContent = getName()
-    console.log(getName());
+    displayName(id)
     displayCustomer(customer)
 }
 generateCustomer()
-
-
-function getName() {
-    const queryString = window.location.search;
-    const params = new URLSearchParams(queryString)
-    return params.get('name');
-}

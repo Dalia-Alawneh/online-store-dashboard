@@ -6,7 +6,7 @@ function displayCustomers(customers) {
         result += `
         <tr>
             <td>${customer.id}</td>
-            <td><a href="user.html?id=${customer.id}&name=${customer.firstName}">${customer.firstName}</a></td>
+            <td><a href="user.html?id=${customer.id}>${customer.firstName}</a></td>
             <td>${customer.lastName}</td>
             <td><img class="customer-img" src="${customer.image}" alt="${customer.title}" width="50"></td>
             <td>${customer.gender}</td>
