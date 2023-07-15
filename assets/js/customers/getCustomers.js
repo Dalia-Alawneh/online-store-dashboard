@@ -13,8 +13,8 @@ function displayCustomers(customers) {
             <td>${customer.email}</td>
             <td>${customer.age}</td>
             <td>${customer.address.address}</td>
-            <td><a href= "user-cart.html?id=${customer.id}"><img src="./assets/img/trolley.png"  width="20"/></a></td>
-            <td><button onclick = deleteUserConfirmModal(${customer.id})><img src="./assets/img/trash.png"  width="22"/></button></td>
+            <td><a href= "user-cart.html?id=${customer.id}"><img src="assets/img/trolley.png"  width="20"/></a></td>
+            <td><button onclick = deleteUserConfirmModal(${customer.id})><img src="assets/img/trash.png"  width="22"/></button></td>
         </tr>`;
     });
     tbody.innerHTML = result;
