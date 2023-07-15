@@ -39,3 +39,15 @@ function deleteUserConfirmModal(id, img = "../assets/img/warning.png") {
     <button class="btn btn-info" onclick = hideAlert('.alert')>Cancel</button>`
     document.body.appendChild(confirmModal)
 }
+function deleteCartConfirmModal(id, img = "../assets/img/warning.png") {
+    const confirmModal = document.createElement('div')
+    confirmModal.classList.add('alert')
+    confirmModal.classList.add('confirm-alert')
+    confirmModal.classList.add('danger')
+    confirmModal.innerHTML = `
+    <img src="${img}" width="50">
+    <p class="my-2">Are you sure you want to delete this cart?</p>
+    <button class="btn btn-info" onclick = deleteCart(${id})>Yes, Delete it</button>
+    <button class="btn btn-info" onclick = hideAlert('.alert')>Cancel</button>`
+    document.body.appendChild(confirmModal)
+}

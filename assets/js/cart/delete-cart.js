@@ -1,12 +1,12 @@
-hideAlert('.alert')
-async function deleteUser(id) {
+async function deleteCart(id) {
+    hideAlert('.alert')
     try {
-        const response = await fetch(`https://dummyjson.com/users/${id}`, {
+        const response = await fetch(`https://dummyjson.com/carts/${id}`, {
             method: 'DELETE',
         })
         const user = await response.json();
         if (user) {
-            showModal(`User deleted successfully`, "../assets/img/check.png", 'success')
+            showModal(`Cart deleted successfully`, "../assets/img/check.png", 'success')
         }
     } catch (error) {
         console.error(error);

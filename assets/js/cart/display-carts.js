@@ -46,6 +46,7 @@ function displayCarts(carts, userName) {
             }
                     </tbody>
                 </table>
+                <button class="btn btn-danger" onclick=deleteCartConfirmModal(${cart.id})>Delete Cart</button>
             </div>
         </div>`
     });
